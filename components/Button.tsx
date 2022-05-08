@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 interface IProps {
   title: string
+  Icon: (props: React.ComponentProps<'svg'>) => JSX.Element
 }
 
-export const Button = ({ title }: IProps) => {
+export const Button = ({ title, Icon }: IProps) => {
   return (
-    <div className="grid cursor-pointer place-content-center rounded-md bg-teal-600 px-2 py-3 text-white">
-      {title}
-    </div>
+    <Fragment>
+      <a className="flex cursor-pointer items-center justify-center space-x-3 rounded-md bg-teal-600 px-4 py-3 text-white">
+        {Icon && <Icon className="h-6 w-6" />}
+        <p>{title}</p>
+      </a>
+    </Fragment>
   )
 }

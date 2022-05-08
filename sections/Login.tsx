@@ -19,7 +19,9 @@ export const Login = () => {
           <Input name="Email" />
           <Input name="Contraseña" />
           <Link href={'/dashboard'}>
-            <Button title="Ingresar" />
+            <a>
+              <Button title="Ingresar" />
+            </a>
           </Link>
         </form>
       </div>
