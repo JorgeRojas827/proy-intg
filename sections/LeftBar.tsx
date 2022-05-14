@@ -4,11 +4,11 @@ import {
   LogoutIcon,
   PencilIcon,
   TagIcon,
+  UserGroupIcon,
   UserIcon,
   ViewGridIcon,
 } from '@heroicons/react/outline'
 import { LeftBarItem } from '../components/LeftBarItem'
-import { UserCircleIcon } from '@heroicons/react/outline'
 
 export const LeftBar = () => {
   return (
@@ -18,19 +18,16 @@ export const LeftBar = () => {
       </figure>
       <div className="mb-5 w-full border-t border-[#D8D8D8]"></div>
       <div className="flex flex-col justify-between space-y-5">
-        <LeftBarItem href="/cuenta" Icon={UserCircleIcon} text="Cuenta" />
-        <LeftBarItem href="/dashboard" Icon={ViewGridIcon} text="Dashboard" />
-        <LeftBarItem
-          href="/articulos"
-          active
-          Icon={PencilIcon}
-          text="Articulos"
-        />
-        <LeftBarItem href="/ventas" Icon={DocumentTextIcon} text="Ventas" />
-        <LeftBarItem href="/categorias" Icon={TagIcon} text="Categorias" />
+        <LeftBarItem Icon={UserGroupIcon} text="Usuarios" />
+        <LeftBarItem Icon={PencilIcon} text="Articulos" />
+        <LeftBarItem Icon={DocumentTextIcon} text="Ventas" />
+        <LeftBarItem Icon={TagIcon} text="Categorias" />
       </div>
       <div className="absolute bottom-10 mx-auto">
-        <LeftBarItem href="/" Icon={LogoutIcon} text="Cerrar Sesión" />
+        <div className="flex cursor-pointer items-center space-x-3 rounded-lg py-2 font-montserrat text-leftbar-inactive">
+          <LogoutIcon className="h-6 w-6" />
+          <h6 className="font-semibold ">Cerrar Sesión</h6>
+        </div>
       </div>
     </div>
   )

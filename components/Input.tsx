@@ -1,15 +1,21 @@
 import React from 'react'
+import { UseFormRegister } from 'react-hook-form'
+import { IUserLogin } from '../interfaces/IUser'
+import { firstLetterUppercase } from '../helpers/functions'
 
 interface IProps {
-  name: string
+  name: 'email' | 'password'
+  register: UseFormRegister<IUserLogin>
+  type: string
 }
 
-export const Input = ({ name }: IProps) => {
+export const Input = ({ name, register, type }: IProps) => {
   return (
     <input
+      {...register(name)}
       className="rounded-md py-2 px-5 outline-none drop-shadow-input placeholder:opacity-70"
-      type="text"
-      placeholder={name}
+      type={type}
+      placeholder={firstLetterUppercase(name)}
     />
   )
 }
